@@ -1,4 +1,5 @@
 FROM ubuntu:latest
 WORKDIR /gecici
-ADD https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tgz .
+ARG VERSION
+ADD https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz .
 CMD ls -al
