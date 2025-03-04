@@ -3,14 +3,19 @@ version: "3.9"
 services:
   veritabani:
     image: mysql:5.7
+    restart: always
+    volumes:
+      - verilerim:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: proje
-      MYSQL_USER: projemaster
-      MYSQL
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: veritabani
+      MYSQL_USER: kullanici
+      MYSQL_PASSWORD: sifre
+
   
-
-
-volumes:
+  
+  volumes:
+    verilerim:
 
 
 
