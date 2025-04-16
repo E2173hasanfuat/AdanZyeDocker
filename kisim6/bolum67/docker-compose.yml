@@ -11,15 +11,28 @@ services:
       MYSQL_DATABASE: veritabani
       MYSQL_USER: kullanici
       MYSQL_PASSWORD: sifre
+    networks:
+      - wpnet
 
-  
-  
+  wordpress:
+    image: wordpress:latest
+    depends_on:
+      - veritabani
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: veritabani:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    networks:
+      - wpnet
   volumes:
     verilerim:
 
-
-
-networks:
-
+  networks:
+    wpnet:
+      driver: bridge
 
   
