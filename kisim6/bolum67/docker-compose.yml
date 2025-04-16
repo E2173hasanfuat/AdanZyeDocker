@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.8"
 
 services:
   veritabani:
@@ -28,11 +28,10 @@ services:
       WORDPRESS_DB_NAME: wordpress
     networks:
       - wpnet
-  volumes:
-    verilerim:
+volumes:
+  verilerim:
 
-  networks:
-    wpnet:
-      driver: bridge
+networks:
+  wpnet:
 
   
